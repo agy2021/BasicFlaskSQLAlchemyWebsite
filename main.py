@@ -24,16 +24,7 @@ def home():
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-
-        if username == "2000114748" and password == "06132011":
-            return render_template("view.html", values=users.query.all())
-        else:
-            return "<h1>Password incorrect.</h1>"
-    else:
-        return render_template("admin.html")
+    return render_template("admin.html")
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
